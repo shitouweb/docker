@@ -1,0 +1,12 @@
+#!/bin/sh
+docker run -it \
+	--name "gitlab-ce" \
+	--hostname "gitlab-ce-14" \
+	-p 8001:80 \
+	-p 443:443 \
+	-p 8122:22 \
+	-v ${GITLAB_HOME}/config:${HOME}/docker/DevOps/gitlab-ce/var/etc/gitlab \
+	-v ${GITLAB_HOME}/data:${HOME}/docker/DevOps/gitlab-ce/var/opt/gitlab \
+	-v ${GITLAB_HOME}/log:${HOME}/docker/DevOps/gitlab-ce/var/log/gitlab \
+	--restart unless-stopped \
+	-d gitlab/gitlab-ce:14.6.1

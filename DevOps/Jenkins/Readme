@@ -1,0 +1,3 @@
+docker pull postgres:13.6
+docker volume create pgdat
+docker volume inspect pgdata 

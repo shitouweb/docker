@@ -1,0 +1,8 @@
+#!/bin/sh
+docker run -p 8000:8080 \
+	-p 50000:50000 \
+	-e JENKINS_ADMIN_ID=root \
+	-e JENKINS_ADMIN_PW=yatou900824 \
+	-e JENKINS_MODE=master \
+	-v jenkinsdata:/data/jenkins \
+	--name jenkins jenkins/jenkins:alpine 
